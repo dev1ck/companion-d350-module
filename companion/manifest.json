@@ -1,0 +1,26 @@
+{
+	"id": "companion-module-devick",
+	"name": "companion-module-devick",
+	"shortname": "kiloview",
+	"description": "Module to control Kiloview decoders",
+	"version": "0.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-devick.git",
+	"bugs": "https://github.com/bitfocus/companion-module-devick/issues",
+	"maintainers": [
+		{
+			"name": "devick",
+			"email": "devick99@gmail.com"
+		}
+	],
+	"runtime": {
+		"type": "node22",
+		"api": "nodejs-ipc",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../dist/main.js"
+	},
+	"legacyIds": [],
+	"manufacturer": "devick",
+	"products": ["D350"],
+	"keywords": ["Decoders", "Video"]
+}
