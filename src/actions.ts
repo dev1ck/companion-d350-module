@@ -46,45 +46,45 @@ export function UpdateActions(self: ModuleInstance): void {
 			},
 		},
 
-		setOutputBindPort: {
-			name: 'Set Output Bind',
-			options: [
-				{
-					type: 'dropdown',
-					label: 'Output',
-					id: 'outputId',
-					default: '1',
-					choices: [
-						{ id: '1', label: 'Output 1' },
-						{ id: '2', label: 'Output 2' },
-					],
-				},
-				{
-					type: 'dropdown',
-					label: 'HW Output Interface ID',
-					id: 'port',
-					default: 'HDMI1',
-					choices: [
-						{ id: 'HDMI1', label: 'HDMI1' },
-						{ id: 'HDMI2', label: 'HDMI2' },
-						{ id: 'SDI', label: 'SDI' },
-					],
-				},
-				{
-					type: 'dropdown',
-					label: 'Enable',
-					id: 'enable',
-					default: '1',
-					choices: [
-						{ id: '1', label: 'YES' },
-						{ id: '0', label: 'NO' },
-					],
-				},
-			],
-			callback: (event) => {
-				const options = event.options
-				void self.DEVICE!.controlOutputInterface(String(options.outputId), String(options.port), String(options.enable))
-			},
-		},
+		// setOutputBindPort: {
+		// 	name: 'Set Output Bind',
+		// 	options: [
+		// 		{
+		// 			type: 'dropdown',
+		// 			label: 'Output',
+		// 			id: 'outputId',
+		// 			default: '1',
+		// 			choices: [
+		// 				{ id: '1', label: 'Output 1' },
+		// 				{ id: '2', label: 'Output 2' },
+		// 			],
+		// 		},
+		// 		{
+		// 			type: 'dropdown',
+		// 			label: 'HW Output Interface ID',
+		// 			id: 'port',
+		// 			default: 'HDMI1',
+		// 			choices: [
+		// 				{ id: 'HDMI1', label: 'HDMI1' },
+		// 				{ id: 'HDMI2', label: 'HDMI2' },
+		// 				{ id: 'SDI', label: 'SDI' },
+		// 			],
+		// 		},
+		// 		{
+		// 			type: 'dropdown',
+		// 			label: 'Enable',
+		// 			id: 'enable',
+		// 			default: '1',
+		// 			choices: [
+		// 				{ id: '1', label: 'YES' },
+		// 				{ id: '0', label: 'NO' },
+		// 			],
+		// 		},
+		// 	],
+		// 	callback: (event) => {
+		// 		const options = event.options
+		// 		void self.DEVICE!.controlOutputInterface(String(options.outputId), String(options.port), String(options.enable))
+		// 	},
+		// },
 	})
 }
