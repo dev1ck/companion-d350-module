@@ -98,7 +98,7 @@ export async function checkSources(self: ModuleInstance): Promise<void> {
 			})
 		})
 	} else {
-		sourcesArray = [{ id: 'null', url: '', label: '- No sources available -' }]
+		sourcesArray = [{ id: 'null', label: '- No sources available -' }]
 	}
 
 	if (JSON.stringify(self.CHOICES_SOURCES) !== JSON.stringify(sourcesArray)) {

@@ -4,7 +4,7 @@ module.exports = {
 	RECONNECT_TIME: 30000,
 	DEVICE: undefined,
 
-	CHOICES_SOURCES: [{ id: 'null', url: '', label: '- No sources available -' }],
+	CHOICES_SOURCES: [{ id: 'null', label: '- No sources available -' }],
 
 	STATE: {
 		mode: 'N/A',

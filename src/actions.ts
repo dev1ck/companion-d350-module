@@ -31,24 +31,10 @@ export function UpdateActions(self: ModuleInstance): void {
 					choices: self.CHOICES_SOURCES,
 					isVisible: (options) => options.action === 'set',
 				},
-				{
-					type: 'dropdown',
-					label: 'Output',
-					id: 'outputId',
-					default: '1',
-					choices: [
-						{ id: '1', label: 'Output 1' },
-						{ id: '2', label: 'Output 2' },
-					],
-				},
 			],
 			callback: (event) => {
 				const options = event.options
-				void self.DEVICE!.controlOutputInterface(
-					String(options.action),
-					String(options.outputId),
-					String(options.sourceId),
-				)
+				void self.DEVICE!.controlOutputInterface(String(options.action), String(options.sourceId))
 			},
 		},
 

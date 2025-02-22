@@ -83,9 +83,9 @@ class KiloviewDecoders {
 		return this.fetchData('/output/get.json', { output })
 	}
 
-	async controlOutputInterface(action: string, output: string, source: string): Promise<any> {
+	async controlOutputInterface(action: string, source: string): Promise<any> {
 		const params: Record<string, any> = {
-			output,
+			output: '1',
 			action,
 			position: '1',
 		}
