@@ -31,7 +31,7 @@ export class ModuleInstance extends InstanceBase<ModuleConfig> {
 		this.DEVICE = undefined
 		this.updateStatus(InstanceStatus.Ok)
 
-		//await this.initConnection()
+		await this.initConnection()
 		this.updateActions() // export actions
 		this.updateFeedbacks() // export feedbacks
 		this.updateVariableDefinitions() // export variable definitions

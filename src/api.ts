@@ -90,11 +90,10 @@ export async function checkSources(self: ModuleInstance): Promise<void> {
 	let sourcesArray: Source[] = []
 
 	const sources = await self.DEVICE.getSourceList()
-
 	if (sources && Array.isArray(sources.data)) {
 		sources.data.forEach((source: any) => {
 			sourcesArray.push({
-				id: sources.id,
+				id: source.id,
 				label: source.name,
 			})
 		})
@@ -105,6 +104,7 @@ export async function checkSources(self: ModuleInstance): Promise<void> {
 	if (JSON.stringify(self.CHOICES_SOURCES) !== JSON.stringify(sourcesArray)) {
 		self.log('info', 'Sources have changed. Updating Choices.')
 		self.CHOICES_SOURCES = sourcesArray
+		console.log(self.CHOICES_SOURCES)
 		self.updateActions()
 	}
 }

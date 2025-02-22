@@ -27,7 +27,6 @@ class KiloviewDecoders {
 			params: params, // `params` 객체가 URL에 자동으로 추가됩니다.
 		})
 		const result = request.data
-		console.log(result)
 
 		if (result && result.result === 'error') {
 			const error = new Error(result.msg)
@@ -36,12 +35,12 @@ class KiloviewDecoders {
 		}
 
 		this.alias = result.data.alias
+		this.token = result.data.token
 		this.authorized = true
 	}
 
 	async fetchData(url: string, params: any = undefined): Promise<any> {
-		const endPoint = new URL(url, this.baseURL)
-
+		const endPoint = new URL(this.baseURL + url)
 		if (!this.authorized) {
 			await this.authorize()
 		}
@@ -61,7 +60,6 @@ class KiloviewDecoders {
 		const request = await axios.get(endPoint.toString(), {
 			headers: headers,
 		})
-
 		const result: any = request.data
 		if (result && result.result === 'auth-failed') {
 			await this.authorize()
@@ -78,7 +76,7 @@ class KiloviewDecoders {
 	}
 
 	async getSourceList(): Promise<any> {
-		return this.fetchData('source/get.json')
+		return this.fetchData('/source/get.json')
 	}
 
 	async getOutputInfo(output: string): Promise<any> {
